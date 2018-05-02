@@ -1,0 +1,5 @@
+cython>=0.27.3
+numpy>=1.14.0
+websockets>=4.0.1
+matplotlib>=2.1.2
+seaborn>=0.8.1
