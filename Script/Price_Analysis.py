@@ -30,14 +30,12 @@ class AnalyseData:
         self.nb = 0
         self.data = {}
         self.df = {}
-        self.fd = {}
         for name, obj in objs.items():
             self.obj.append(obj)
             self.names.append(name)
             self.nb += 1
             for key in keys:
                 self.df[name, key] = np.array([[]], dtype=np.float64)
-                self.fd[name, key] = np.array([[0]], dtype=np.float64)
         self.objs = objs
         self.timer = time.time()
         self.t = 0
@@ -61,7 +59,8 @@ class AnalyseData:
             for key in self.keys:
                 self.data[name, key] = float(obj.data[key])
                 self.df[name, key] = np.append(
-                    self.df[name, key], np.array([[np.float64(obj.data[key])]]), 
+                    self.df[name, key], 
+                    np.array([[np.float64(obj.data[key])]]), 
                     axis=1
                 )
         return self.data
@@ -118,7 +117,7 @@ class AnalyseData:
         """ Plot data """
         n = len(ax)
         rescale = None
-        if self.t > self.xlim_max:
+        if self.t > self.xlim_max or self.t == 1:
             self.xlim_max *= 1.5
             rescale = True
         if min(data.values()) < self.ylim_min:
@@ -321,5 +320,6 @@ loop.run_until_complete(asyncio.gather(
     bitf.request_WS('ticker', pair='BTCUSD'),
     bina.request_WS(method='@ticker', pair='btcusdt'),
     okex.request_WS(channel='ok_sub_', kind='spot_', pair='btc_usdt', method='_ticker'),
+    gen.looper(ax),
 ))
 print('End of the execution')

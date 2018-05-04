@@ -98,7 +98,8 @@ class AnalyseData:
             self.t3 = time.time()
             stat_txt.set_text(text)
             self.plot_price(data, last, [ax1])
-            self.plot_histo(0, 
+            self.plot_histo(
+                0, 
                 [ax21, ax22, ax23, ax24, ax31, ax32, ax33, ax34], 
                 [txt21, txt22, txt23, txt24, txt31, txt32, txt33, txt34]
             )
