@@ -5,7 +5,7 @@
 ## Description:
   This is a class project where I used **asynchronous programmation** to download data and analyse it in the same time, and I used **cython** to speed-up the analysis. I also used my own econometric tools, they are surely not the best ones, but I kept control over them.
   
-  When *Price_Analysis.py* or *Return_Analysis.py* is run a screen split into four appears. At the top left there is the graph of the price (or return) of Bitcoin in USD for each exchange, at the top right and at down left there are respectively drawing the autocorrelogram and the kernel density function. And at the down right there are some statistics and the estimation of the best order ARMA(p,q). Analysis and graphs are continuously updated as shown in the GIF below.
+  When *Price_Analysis.py* or *Return_Analysis.py* is run a screen split into four appears. At the top left there is the graph of the price (or return) of Bitcoin in USD for each exchange, at the top right and at down left there are respectively drawing the **autocorrelogram** and the **kernel density function**. And at the down right there are some statistics and the estimation of the **best order ARMA(p,q)**. Analysis and graphs are **continuously updated** as shown in the GIF below.
 
 ## Short demo:
 
