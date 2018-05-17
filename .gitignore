@@ -1,0 +1,7 @@
+Scripts/build/
+Scripts/__pycache__/
+
+# ignore files created during the compilation in C
+Scripts/script_cython.c
+Scripts/script_cython.cpython-36m-x86_64-linux-gnu.so
+Scripts/script_cython.html
